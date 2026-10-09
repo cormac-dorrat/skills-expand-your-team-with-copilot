@@ -294,6 +294,10 @@ document.addEventListener("DOMContentLoaded", () => {
           .padStart(2, "0")} ${period}`;
       };
 
+      if (!details.schedule_details.end_time) {
+        return details.schedule;
+      }
+
       const startTime = formatTime(details.schedule_details.start_time);
       const endTime = formatTime(details.schedule_details.end_time);
 

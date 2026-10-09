@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // State for activities and filters
   let allActivities = {};
   let currentFilter = "all";
-  let searchQuery = "";
+  let searchQuery = new URLSearchParams(window.location.search).get("activity") || "";
+  searchInput.value = searchQuery;
   let currentDay = "";
   let currentTimeRange = "";
 
@@ -591,6 +592,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    activityCard.appendChild(ActivitySharing.createControls(name));
     activitiesList.appendChild(activityCard);
   }
 

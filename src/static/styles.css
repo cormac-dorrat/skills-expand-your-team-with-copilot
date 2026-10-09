@@ -32,6 +32,21 @@
   --info-light: #d1ecf1;
 }
 
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b3b3b3;
+  --border: #424242;
+  --border-light: #333333;
+  --border-focus: #666666;
+  --success-light: #1b3a20;
+  --warning-light: #4a3512;
+  --error-light: #421b1b;
+  --info-light: #15363c;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -617,6 +632,9 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #user-status {
@@ -650,6 +668,11 @@ footer {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.activity-tag {
+  background-color: var(--border-light) !important;
+  color: var(--text-primary) !important;
+}
+
 .user-icon {
   font-size: 1rem;
 }
@@ -663,4 +686,12 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  #user-controls {
+    position: static;
+    align-self: flex-end;
+    margin-top: 8px;
+  }
 }
